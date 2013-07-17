@@ -28,6 +28,7 @@ class ReviewsController < ApplicationController
   end
 
   def edit
+
   end
 
   private
@@ -37,7 +38,7 @@ class ReviewsController < ApplicationController
   end
 
   def review_params
-  	return params.require(:review).permit(:comment)
+  	return params.require(:review).permit(:comment, :user_id, :product_id)
   end
 
 end
