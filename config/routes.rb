@@ -1,7 +1,11 @@
 Rainforest::Application.routes.draw do
   
+  get "sessions/new"
+  get "sessions/create"
+  get "sessions/destroy"
   resources :products
   resources :users, :only => [:new, :create]
+  resources :sessions, :only => [:new, :create, :destroy]
 
   root :to => "products#index"
 
@@ -12,6 +16,8 @@ Rainforest::Application.routes.draw do
   # patch 'products/:id'    => 'products#update', as: "update_picture"
   # get 'products/:id/edit' => 'products#edit', as: "edit_product"
   # delete 'products/:id'   => 'products#destroy'
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
